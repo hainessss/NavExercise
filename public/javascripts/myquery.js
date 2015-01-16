@@ -1,3 +1,5 @@
+//I started this as a project awhile ago and thought
+//I would add to it and use it here as this is an excellent use case.
 (function () {
 
   var QueryWrapper = function (elems) {
@@ -93,7 +95,6 @@
 
   window.$ = myQuery;
 
-  $.version = 'beta';
   $.each = function(array, func) {
     for(var i = 0; i < array.length; i++) {
       func(array[i], i);

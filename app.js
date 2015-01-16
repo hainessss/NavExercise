@@ -24,5 +24,4 @@ app.get('/events', function(request, response) {
   response.send('stand in events page');
 });
 
-
 module.exports = app;

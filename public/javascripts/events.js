@@ -1,4 +1,12 @@
 (function() {
+
+  //add overlay when page loads if toggle is checked
+  var toggle = $('#menu-toggle').get(0);
+
+  if (toggle.checked) {
+    $('#overlay').addClass('overlay');
+  }
+
   //removes overlay and closes menus
   $('#overlay').on('click', function() {
     var menus = $('ul');
@@ -10,6 +18,7 @@
 
     $('#overlay').removeClass('overlay');
 
+    //closes toggle if open
     if (toggle.checked) {
       toggle.checked = false;
     }
@@ -27,9 +36,16 @@
   //adds overlay and opens menus and toggles chevrons
   $('a').on('click', function() {
     var target = this;
+    var toggle = $('#menu-toggle').get(0);
+
     //clears everything
     $('ul').removeClass('clicked');
     $('li').removeClass('active');
+
+    //closes overlay if primary nav is clicked while active in desktop view
+    if (!toggle.checked && this.className === 'chevron-down') {
+      $('#overlay').removeClass('overlay');
+    }
 
     //clears and applies chevron toggle
     if (this.className === 'chevron') {
