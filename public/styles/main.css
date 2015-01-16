@@ -1,6 +1,6 @@
 @import "fonts.css";
 
-/* Universal */
+/************ Universal *************/
 * {
   padding: 0;
   margin: 0;
@@ -22,6 +22,35 @@ p {
   font-size: 1.25em;
 }
 
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  margin: 0;
+  font: 20vmin/1 HUGEAvantGardeBold;
+  letter-spacing: -0.06em;
+  text-align: center;
+}
+
+h2 {
+  top: 50px;
+  left: 24px;
+  margin: 25px 24px;
+  text-align: left;
+  color: black;
+  font: 12vw HUGEAvantGardeBold;
+}
+
 .overlay{
   position: fixed;
   top: 72;
@@ -32,13 +61,7 @@ p {
   background-color: rgba(0,0,0,0.5); /*dim the background*/
 }
 
-a {
-  text-decoration: none;
-}
-
-li {
-  list-style-type: none;
-}
+/************* navigation ***********************/
 
 #brand {
   width: 60px;
@@ -63,6 +86,46 @@ header {
   color: white;
   background-color: #ec008c;
 }
+
+nav {
+  width: 100%;
+  text-align: left;
+  padding-top: 12px;
+}
+
+nav a {
+  color: black;
+  display: block;
+  line-height: 48px;
+  padding-left: 24px;
+  font-size: 1.25em;
+  letter-spacing: .03em;
+  font-family: HUGEAvantGardeBold;
+}
+
+nav ul li a:hover {
+  color: #ec008c;
+  background-color: #eee;
+}
+
+nav ul ul {
+  clear: both;
+  max-height: 0;
+  overflow: hidden;
+  background-color: white;
+  transition: all 0.3s linear;
+}
+
+nav ul ul li {
+  display: block;
+}
+
+nav ul ul li a {
+  font-size: .9em;
+  font-family: Galaxie;
+}
+
+/************ classes ***************/
 
 .wrapper {
   width: none;
@@ -115,6 +178,12 @@ header {
   background-position: 90% 50%;
 }
 
+.clicked {
+  max-height: 500px;
+}
+
+
+/************** Menu toggle ********************/
 #menu-toggle {
   display: none;
 }
@@ -123,7 +192,6 @@ header {
   position: absolute;
   left: 0;
 }
-
 
 #menu-toggle:checked ~ .menu-icon {
   position: absolute;
@@ -140,70 +208,88 @@ header {
   background-color: rgba(0,0,0,0.75);
 }
 
-nav {
-  width: 100%;
-  text-align: left;
-  padding-top: 12px;
-}
-
-nav a {
-  color: black;
-  display: block;
-  line-height: 48px;
-  padding-left: 24px;
-  font-size: 1.25em;
-  letter-spacing: .03em;
-  font-family: HUGEAvantGardeBold;
-}
-
-nav ul ul li a {
-  font-size: .9em;
-  font-family: Galaxie;
-}
-
-nav ul li a:hover {
-  color: #ec008c;
-  background-color: #eee;
-}
-
-nav ul ul {
-  clear: both;
-  max-height: 0;
-  overflow: hidden;
-  background-color: white;
-  transition: all 0.3s linear;
-}
-
-.clicked {
-  max-height: 500px;
-}
-
-nav ul ul li {
-  display: block;
-}
-
-h1 {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  margin: 0;
-  font: 20vmin/1 HUGEAvantGardeBold;
-  letter-spacing: -0.06em;
-  text-align: center;
-}
-
-h2 {
-  top: 50px;
-  left: 24px;
-  margin: 25px 24px;
-  text-align: left;
-  color: black;
-  font: 12vw HUGEAvantGardeBold;
-}
 
 @media screen and (min-width: 768px) {
+
+/************ Universal *************/
+ h2 {
+    height: 35%;
+    margin: auto;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+    text-align: center;
+    color: white;
+    font: 8vw HUGEAvantGardeBold;
+  }
+
+/************ Navigation *************/
+  nav {
+    padding-top: 0px;
+    text-align: left;
+  }
+
+  nav ul {
+    white-space: nowrap;
+    overflow-x: hidden;
+  }
+
+  nav ul li {
+    display: inline-block;
+  }
+
+  nav ul li:hover {
+    background-color: white;
+  }
+
+  nav ul li a {
+    color: white;
+    padding: 0 24px;
+    line-height: 72px;
+    display: block;
+  }
+
+  nav ul li a:hover {
+    color: #ec008c;
+    background-color: white;
+  }
+
+  nav ul ul {
+    position: absolute;
+    background-color: white;
+    min-width: 240px;
+    transition: all 0s;
+  }
+
+  nav ul ul li {
+    height: 48px;
+    padding: 0 0;
+  }
+
+  nav ul ul li a {
+    color: #ec008c;
+    line-height: 48px;
+  }
+
+  nav ul ul li:hover {
+    background-color: #eee;
+  }
+
+  nav ul li:hover ul li a:hover {
+    color: #ec008c;
+  }
+
+  nav ul li:hover ul li a,visited {
+    color: black;
+  }
+
+  #brand {
+    position: absolute;
+    line-height: 72px;
+    left: 24px;
+    transition: none;
+  }
+
+/************ classes *************/
 
   .wrapper {
     position: relative;
@@ -226,123 +312,41 @@ h2 {
     background-image: none;
   }
 
-  h2 {
-    height: 35%;
-    margin: auto;
+  .menu {
+    background-color: transparent;
+    width: calc(100% - 132px);
+    height: auto;
     position: absolute;
-    top: 0; left: 0; bottom: 0; right: 0;
-    text-align: center;
-    color: white;
-    font: 8vw HUGEAvantGardeBold;
-  }
-
-  #brand {
-    position: absolute;
-    line-height: 72px;
-    left: 24px;
+    left: 132px;
+    top: 0px;
+    z-index: 3;
     transition: none;
   }
 
-    nav {
-      padding-top: 0px;
-      text-align: left;
-    }
+  #menu-toggle:checked ~ .menu {
+    position: absolute;
+    left: 132px;
+  }
 
-    .menu {
-      background-color: transparent;
-      width: calc(100% - 132px);
-      height: auto;
-      position: absolute;
-      left: 132px;
-      top: 0px;
-      z-index: 3;
-      transition: none;
-    }
+  .clicked {
+    height: auto;
+  }
 
-    #menu-toggle:checked ~ .menu {
-      position: absolute;
-      left: 132px;
-    }
+  .active {
+    background-color: white;
+  }
 
-    nav ul li a {
-      color: white;
-    }
+  .active a {
+    color: #ec008c;
+  }
+
+  .active ul a {
+    color: black;
+  }
 
 
-    nav ul li a:hover {
-      color: #ec008c;
-      background-color: white;
-    }
-
-    nav ul li:hover ul li a:hover {
-      color: #ec008c;
-    }
-
-    nav ul li:hover ul li a,visited {
-      color: black;
-    }
-
-    nav ul ul {
-      position: absolute;
-      background-color: white;
-      min-width: 240px;
-      transition: all 0s;
-    }
-
-    nav ul ul li {
-      height: 48px;
-      padding: 0 0;
-    }
-
-    nav ul ul li a {
-      color: #ec008c;
-    }
-
-    nav ul ul li a {
-      line-height: 48px;
-    }
-
-    nav ul ul li:hover {
-      background-color: #eee;
-    }
-
-    nav ul {
-      white-space: nowrap;
-      overflow-x: hidden;
-    }
-
-    nav ul li {
-      display: inline-block;
-    }
-
-    nav ul li:hover {
-      background-color: white;
-    }
-
-    .clicked {
-      height: auto;
-    }
-
-    .active {
-      background-color: white;
-    }
-
-    .active a {
-      color: #ec008c;
-    }
-
-    .active ul a {
-      color: black;
-    }
-
-    nav ul li a {
-      padding: 0 24px;
-      line-height: 72px;
-      display: block;
-    }
-
-    .menu-icon {
-      display: none;
-    }
+  .menu-icon {
+    display: none;
+  }
 }
 
